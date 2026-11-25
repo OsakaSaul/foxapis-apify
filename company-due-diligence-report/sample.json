@@ -1,0 +1,102 @@
+{
+  "captured": "2026-11-23",
+  "input": {
+    "name": "Walmart",
+    "angle": "selling_to"
+  },
+  "output": {
+    "status": "complete",
+    "sections_json": {
+      "verdict": {
+        "band": "stop",
+        "score": 100,
+        "headline": "Do not spend a quarter of pipeline on this account."
+      },
+      "headline": "Selling to them",
+      "sections": [
+        {
+          "id": "executive_summary",
+          "title": "The Short Answer",
+          "citations": [
+            "https://corporate.walmart.com/about/leadership/john-furner"
+          ]
+        },
+        {
+          "id": "company_identity",
+          "title": "Which Company This Is",
+          "citations": [
+            "https://www.walmart.com/store/finder?location=&utm_campaign=Patrocinio%20LVP&utm_source=LVP&utm_content=clic-header-web&utm_medium=Referral&utm_var1=espa%5C%5C361a&utm_var2=unity-cup&utm_var3=counter-strike%2F%2F%2F%2Fdesignjet-t700",
+            "https://corporate.walmart.com/about/leadership/suresh-kumar"
+          ]
+        },
+        "[14 more shortened]"
+      ],
+      "citations": {
+        "warning_bells": [
+          "https://storejobs.wal-mart.com/hiringcenter/disclaimer",
+          "https://walmart.wd504.myworkdayjobs.com/WalmartExternal",
+          "[13 more shortened]"
+        ],
+        "payment_record": [],
+        "recent_signals": [
+          "https://www.foxbusiness.com/business-leaders/who-john-furner-walmarts-new-ceo",
+          "https://www.retaildive.com/news/walmart-ceo-dynamic-pricing-concerns/831490/",
+          "[4 more shortened]"
+        ],
+        "spend_direction": [
+          "https://careers.walmart.com/",
+          "https://www.foxbusiness.com/business-leaders/who-john-furner-walmarts-new-ceo",
+          "[2 more shortened]"
+        ],
+        "company_identity": [
+          "https://www.walmart.com/store/finder?location=&utm_campaign=Patrocinio%20LVP&utm_source=LVP&utm_content=clic-header-web&utm_medium=Referral&utm_var1=espa%5C%5C361a&utm_var2=unity-cup&utm_var3=counter-strike%2F%2F%2F%2Fdesignjet-t700",
+          "https://corporate.walmart.com/about/leadership/suresh-kumar"
+        ],
+        "executive_summary": [
+          "https://corporate.walmart.com/about/leadership/john-furner"
+        ],
+        "financial_picture": [
+          "https://derrick-app.com/company/walmart/executives"
+        ],
+        "corporate_standing": [
+          "https://corporate.walmart.com/about/leadership/john-furner",
+          "https://derrick-app.com/company/walmart/executives"
+        ],
+        "solvency_and_runway": [
+          "https://corporate.walmart.com/about/leadership/john-david-rainey"
+        ],
+        "key_people_and_contacts": [
+          "https://www.foxbusiness.com/business-leaders/who-john-furner-walmarts-new-ceo",
+          "https://www.walmart.com/store/finder?location=&utm_campaign=Patrocinio%20LVP&utm_source=LVP&utm_content=clic-header-web&utm_medium=Referral&utm_var1=espa%5C%5C361a&utm_var2=unity-cup&utm_var3=counter-strike%2F%2F%2F%2Fdesignjet-t700",
+          "[5 more shortened]"
+        ],
+        "procurement_and_who_signs": [],
+        "customers_and_market_position": [
+          "https://derrick-app.com/company/walmart/executives",
+          "https://careers.walmart.com/",
+          "[1 more shortened]"
+        ],
+        "what_they_do_and_how_they_make_money": [
+          "https://careers.walmart.com/",
+          "https://marketplace.walmart.com/walmart-fulfillment-services-pricing/"
+        ]
+      },
+      "guard_log": {
+        "broken": {},
+        "headline": [],
+        "short_answer": []
+      },
+      "quality_flags": [
+        "thin_citations_financial_picture",
+        "thin_citations_procurement_and_who_signs",
+        "[15 more shortened]"
+      ],
+      "omitted_from_share": [
+        {
+          "id": "your_existing_relationship",
+          "why": "belongs to the reader who ran it, not to this report"
+        }
+      ]
+    }
+  }
+}

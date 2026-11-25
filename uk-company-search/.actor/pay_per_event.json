@@ -1,0 +1,7 @@
+{
+  "search-with-results": {
+    "eventTitle": "Search with results",
+    "eventDescription": "One search that returns at least one company, up to 100 rows.",
+    "eventPriceUsd": 0.01
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "method": "GET",
+  "path": "/v1/companies/search",
+  "fields": [
+    "q",
+    "company_number",
+    "status",
+    "country",
+    "sic",
+    "page",
+    "page_size"
+  ],
+  "oneOf": [
+    "q",
+    "company_number",
+    "status",
+    "country",
+    "sic"
+  ],
+  "event": "search-with-results"
+}

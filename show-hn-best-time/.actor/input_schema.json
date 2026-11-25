@@ -1,0 +1,24 @@
+{
+  "title": "Show HN Best Time to Post",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "weekday": {
+      "title": "Weekday",
+      "type": "integer",
+      "description": "0 is Sunday, 6 is Saturday.",
+      "minimum": 0,
+      "maximum": 6,
+      "prefill": 2
+    },
+    "hour": {
+      "title": "Hour (UTC)",
+      "type": "integer",
+      "description": "0 to 23, in UTC.",
+      "minimum": 0,
+      "maximum": 23,
+      "prefill": 15
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/v1/govcon_vet",
+  "fields": [
+    "company",
+    "mode"
+  ],
+  "required": [
+    "company"
+  ],
+  "eventByMode": {
+    "snapshot": "contractor-snapshot",
+    "full": "contractor-full"
+  },
+  "defaultMode": "snapshot",
+  "notDelivered": {
+    "found": false
+  }
+}

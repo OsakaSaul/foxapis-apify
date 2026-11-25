@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "product-changelog-lookup",
+  "title": "Product Changelog Lookup",
+  "description": "The newest changelog entries held for a software product, each with date, title, a short summary and the vendor's own link.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

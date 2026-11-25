@@ -1,0 +1,225 @@
+{
+  "captured": "2026-11-23",
+  "input": {
+    "company": "K19NE1KN3EL5",
+    "mode": "full"
+  },
+  "output": {
+    "found": true,
+    "status": "found",
+    "mode": "full",
+    "as_of": "2026-11-22",
+    "contractor": {
+      "name": "Schwab Engineering, Inc.",
+      "uei": "K19NE1KN3EL5",
+      "matched_on": "uei",
+      "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+    },
+    "registration": {
+      "status": "not_checked",
+      "reason": "registration source not connected"
+    },
+    "exclusions": {
+      "status": "not_checked",
+      "reason": "registration source not connected"
+    },
+    "awards": {
+      "window": {
+        "from": "2022-10-01",
+        "to": "2027-09-30",
+        "federal_years": "2023 to 2027"
+      },
+      "not_checked": [],
+      "total_5y": {
+        "amount_usd": 988347,
+        "contracts": 7,
+        "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+      },
+      "trend": {
+        "fiscal_year": 2026,
+        "obligated_usd": -25585,
+        "prior_fiscal_year": 2025,
+        "prior_obligated_usd": 102297,
+        "change_pct": -125,
+        "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+      },
+      "top_agency": {
+        "agency": "Department of Veterans Affairs",
+        "obligated_usd": 988347,
+        "share_pct": 100,
+        "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+      },
+      "recompete": {
+        "sample": "the 100 biggest awards of the last five federal years",
+        "sample_size": 7,
+        "active_contracts": 1,
+        "ending_within_18_months": 1,
+        "ending_within_18_months_usd": 881844,
+        "earliest_end": "2027-10-05",
+        "record_url": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0206_3600_-NONE-_-NONE-"
+      },
+      "top_contracts": [
+        {
+          "award_id": "36C77624C0206",
+          "award_total_obligated_usd": 881844,
+          "start": "2024-09-26",
+          "end": "2027-10-05",
+          "agency": "Department of Veterans Affairs",
+          "set_aside": null,
+          "naics": "541330",
+          "naics_name": "Engineering Services",
+          "description": "MINOR DESIGN TO CONSTRUCT HYBRID OPERATING SUITE - SAN FRANCISCO, CA",
+          "record_url": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0206_3600_-NONE-_-NONE-",
+          "recompete_window": true
+        },
+        {
+          "award_id": "36E77618N0052",
+          "award_total_obligated_usd": 486919,
+          "start": "2018-08-16",
+          "end": "2025-08-12",
+          "agency": "Department of Veterans Affairs",
+          "set_aside": null,
+          "naics": "541330",
+          "naics_name": "Engineering Services",
+          "description": "ARCHITECT-ENGINEER IS TO PROVIDE ALL DESIGN AND ENGINEERING SERVICES TO PROVIDE A COMPLETE DESIGN FOR THE EXPAND MENTAL HEALTH CLINIC B90 MINOR PROJEC",
+          "record_url": "https://www.usaspending.gov/award/CONT_AWD_36E77618N0052_3600_VA25814D0021_3600"
+        },
+        "[5 more shortened]"
+      ],
+      "by_year": [
+        {
+          "fiscal_year": 2023,
+          "obligated_usd": -13287,
+          "partial_year": false,
+          "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+        },
+        {
+          "fiscal_year": 2024,
+          "obligated_usd": 924922,
+          "partial_year": false,
+          "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+        },
+        "[3 more shortened]"
+      ],
+      "by_agency": [
+        {
+          "agency": "Department of Veterans Affairs",
+          "obligated_usd": 988347,
+          "share_pct": 100,
+          "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+        }
+      ],
+      "by_industry_code": [
+        {
+          "naics": "541330",
+          "name": "Engineering Services",
+          "obligated_usd": 969730,
+          "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+        },
+        {
+          "naics": "541310",
+          "name": "Architectural Services",
+          "obligated_usd": 18616,
+          "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+        }
+      ],
+      "active_contracts": [
+        {
+          "award_id": "36C77624C0206",
+          "award_total_obligated_usd": 881844,
+          "start": "2024-09-26",
+          "end": "2027-10-05",
+          "agency": "Department of Veterans Affairs",
+          "set_aside": null,
+          "naics": "541330",
+          "naics_name": "Engineering Services",
+          "description": "MINOR DESIGN TO CONSTRUCT HYBRID OPERATING SUITE - SAN FRANCISCO, CA",
+          "record_url": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0206_3600_-NONE-_-NONE-",
+          "recompete_window": true
+        }
+      ],
+      "set_asides": {
+        "rows": [
+          {
+            "set_aside": "Service-disabled veteran-owned set-aside",
+            "code": "SDVOSBC",
+            "obligated_usd": 952237,
+            "share_pct": 96,
+            "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+          }
+        ]
+      },
+      "recent_modifications": {
+        "since": "2026-05-26",
+        "rows": [
+          {
+            "award_id": "36C26025C0043",
+            "modification": "P00002",
+            "date": "2026-10-01",
+            "change_usd": 0,
+            "agency": "Department of Veterans Affairs",
+            "description": "CORRECT DATES IN ECMS",
+            "record_url": "https://www.usaspending.gov/award/CONT_AWD_36C26025C0043_3600_-NONE-_-NONE-"
+          },
+          {
+            "award_id": "36C26225C0206",
+            "modification": "P00001",
+            "date": "2026-09-23",
+            "change_usd": 0,
+            "agency": "Department of Veterans Affairs",
+            "description": "EO 14398",
+            "record_url": "https://www.usaspending.gov/award/CONT_AWD_36C26225C0206_3600_-NONE-_-NONE-"
+          },
+          "[1 more shortened]"
+        ]
+      },
+      "subawards": {
+        "sampled_awards": 7,
+        "subcontracts": 0,
+        "reported_usd": 0,
+        "top_subcontractors": [],
+        "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+      },
+      "recipient_profile": {
+        "business_types_on_awards": [
+          "category business",
+          "corporate entity not tax exempt",
+          "[5 more shortened]"
+        ],
+        "parent_name": "Schwab Engineering, Inc.",
+        "note": "Business types as recorded on its federal awards; not a certification check.",
+        "record_url": "https://www.usaspending.gov/recipient/ff993536-a457-6e19-b432-de87e1524527-C/latest"
+      }
+    },
+    "officers": {
+      "rows": [],
+      "records_checked": 3,
+      "note": "None of the award records checked publish officer names. Names and roles are not guessed."
+    },
+    "verdict": {
+      "sentence": "Schwab Engineering, Inc. was obligated $988K on 7 federal contracts in federal years 2023 to 2027, with net deobligations in federal year 2026; 100 percent of those dollars come from one agency, Department of Veterans Affairs; 1 of its 1 biggest active contracts ends within 18 months (a recompete wi [shortened]",
+      "label": "Our read, made by fixed rules from the figures in this report. Facts are the record's own, each with a link.",
+      "flags": [
+        "net_deobligation",
+        "agency_concentrated",
+        "[2 more shortened]"
+      ],
+      "figures": [
+        {
+          "path": "awards.total_5y.amount_usd",
+          "value": 988347,
+          "as_written": "$988K"
+        },
+        {
+          "path": "awards.total_5y.contracts",
+          "value": 7,
+          "as_written": "7"
+        },
+        "[4 more shortened]"
+      ]
+    },
+    "dropped_without_record": 0,
+    "limits": "Contract awards only (not grants or loans). A company group can hold awards under several registrations; this report covers the one registration named. Obligations are what the government committed, not what the company was paid. The records change daily; this report is as of the date shown.",
+    "facts_with_record_link": 27
+  }
+}

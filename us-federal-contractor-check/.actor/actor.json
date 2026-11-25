@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "us-federal-contractor-check",
+  "title": "US Federal Contractor Check",
+  "description": "Check one US federal contractor against the official public records: registration, totals, largest contracts and, in full mode, tables by year and agency.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

@@ -1,0 +1,228 @@
+{
+  "captured": "2026-11-25",
+  "input": {
+    "ein": "26-3618722",
+    "mode": "full"
+  },
+  "output": {
+    "resolved": true,
+    "mode": "full",
+    "organization": {
+      "name": "PENCILS OF PROMISE INCORPORATED",
+      "ein": "26-3618722",
+      "city": "NEW YORK",
+      "state": "NY",
+      "page": "https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf"
+    },
+    "match": {
+      "how": "ein",
+      "note": null
+    },
+    "irs_status": {
+      "exemption": {
+        "code": 1,
+        "meaning": "unconditional exemption",
+        "section": "501(c)(3)",
+        "ruling_date": "2009-02",
+        "deductible_contributions_code": 1,
+        "foundation_code": 16,
+        "ntee_code": "Q30",
+        "latest_return_period": "2025-12"
+      },
+      "revocation_list": {
+        "checked": true,
+        "listed": false,
+        "entries": []
+      },
+      "sources": [
+        {
+          "label": "IRS exempt organizations file",
+          "url": "https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf",
+          "as_of": "2026-11-25"
+        },
+        {
+          "label": "IRS automatic-revocation list",
+          "url": "https://www.irs.gov/charities-non-profits/tax-exempt-organization-search-bulk-data-downloads",
+          "as_of": null
+        }
+      ]
+    },
+    "latest_filing": {
+      "period": "2025-12",
+      "form": "990",
+      "revenue": 6551697,
+      "expenses": 3880982,
+      "assets": 3401456,
+      "liabilities": 82573,
+      "net_assets": 3318883,
+      "program_pct": 82.3,
+      "read_from": "IRS Form 990 e-file",
+      "page": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_09A.zip"
+    },
+    "red_flags": [],
+    "not_checked": [
+      {
+        "what": "State charity registration",
+        "reason": "No open, machine-readable state register is read yet; check the state attorney general's charity register for the state it solicits in."
+      },
+      {
+        "what": "News",
+        "reason": "No cited news check is run for organizations."
+      },
+      "[1 more shortened]"
+    ],
+    "verdict": {
+      "label": "exempt_no_flags_found",
+      "sentence": "PENCILS OF PROMISE INCORPORATED is listed by the IRS with unconditional tax exemption and absent from the automatic-revocation list, with revenue $6.6 million for the year ending 2025-12 and 82.3% of spending on programs; none of the checks run here raised a flag (state registration, news and court  [shortened]"
+    },
+    "filings": [
+      {
+        "period": "2025-12",
+        "form": "990",
+        "revenue": 6551697,
+        "expenses": 3880982,
+        "surplus": 2670715,
+        "assets": 3401456,
+        "liabilities": 82573,
+        "net_assets": 3318883,
+        "contributions": 6546593,
+        "program_service_revenue": 0,
+        "grants_paid": 0,
+        "program_pct": 82.3,
+        "management_pct": 5.9,
+        "fundraising_pct": 11.7,
+        "cash_months": 6.4,
+        "top_pay": {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF DEVELOPMENT OFFICER",
+          "total_pay": 200206
+        },
+        "read_from": "IRS Form 990 e-file",
+        "page": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_09A.zip",
+        "filing_file": "202622669349300107_public.xml"
+      },
+      {
+        "period": "2024-12",
+        "form": "990",
+        "revenue": 2807917,
+        "expenses": 3945658,
+        "surplus": -1137741,
+        "assets": 1225764,
+        "liabilities": 583963,
+        "net_assets": 641801,
+        "contributions": 2806538,
+        "program_service_revenue": 0,
+        "grants_paid": 0,
+        "program_pct": 87.5,
+        "management_pct": 3.9,
+        "fundraising_pct": 8.6,
+        "cash_months": 3.1,
+        "top_pay": {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF EXECUTIVE OFFICER",
+          "total_pay": 283118
+        },
+        "read_from": "IRS Form 990 e-file",
+        "page": "https://apps.irs.gov/pub/epostcard/990/xml/2025/2025_TEOS_XML_11C.zip",
+        "filing_file": "202532959349301538_public.xml"
+      },
+      "[1 more shortened]"
+    ],
+    "people": {
+      "from_filing_year_ending": "2025-12-31",
+      "voting_board_members": 12,
+      "independent_board_members": 11,
+      "employees": 7,
+      "listed": [
+        {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF DEVELOPMENT OFFICER",
+          "roles": [
+            "key employee"
+          ],
+          "hours_per_week": 40,
+          "pay_from_organization": 177550,
+          "pay_from_related_organizations": 0,
+          "other_pay": 22656,
+          "total_pay": 200206
+        },
+        {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF EXECUTIVE OFFICER / SECRETARY",
+          "roles": [
+            "officer",
+            "director or trustee"
+          ],
+          "hours_per_week": 40,
+          "pay_from_organization": 155983,
+          "pay_from_related_organizations": 0,
+          "other_pay": 22475,
+          "total_pay": 178458
+        },
+        "[11 more shortened]"
+      ],
+      "highest_paid": [
+        {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF DEVELOPMENT OFFICER",
+          "roles": [
+            "key employee"
+          ],
+          "hours_per_week": 40,
+          "pay_from_organization": 177550,
+          "pay_from_related_organizations": 0,
+          "other_pay": 22656,
+          "total_pay": 200206
+        },
+        {
+          "name": "[name removed from this sample]",
+          "title": "CHIEF EXECUTIVE OFFICER / SECRETARY",
+          "roles": [
+            "officer",
+            "director or trustee"
+          ],
+          "hours_per_week": 40,
+          "pay_from_organization": 155983,
+          "pay_from_related_organizations": 0,
+          "other_pay": 22475,
+          "total_pay": 178458
+        },
+        "[3 more shortened]"
+      ],
+      "source": "IRS Form 990 Part VII",
+      "url": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_09A.zip"
+    },
+    "grants": {
+      "from_filing_year_ending": "2025-12-31",
+      "paid_in_year": 0,
+      "to_foreign_recipients": null,
+      "to_us_individuals": null,
+      "largest_to_organizations": [],
+      "received_in_year": {
+        "contributions_and_grants": 6546593,
+        "government_grants": null
+      },
+      "source": "IRS Form 990 Part VIII, Part IX and Schedule I",
+      "url": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_09A.zip"
+    },
+    "mission": {
+      "text": "WE CREATE SCHOOLS, PROGRAMS AND GLOBAL COMMUNITIES AROUND THE COMMON GOAL OF EDUCATION FOR ALL. AT PENCILS OF PROMISE, INC. (\"POP\"), WE BELIEVE EVERY CHILD DESERVES ACCESS TO QUALITY EDUCATION. WE CREATE SCHOOLS, PROGRAMS AND GLOBAL COMMUNITIES AROUND THE COMMON GOAL OF EDUCATION FOR ALL. WE ACCOMPL [shortened]",
+      "url": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_09A.zip"
+    },
+    "state_registration": {
+      "checked": false,
+      "reason": "No open, machine-readable state register is read yet; check the state attorney general's charity register for the state it solicits in."
+    },
+    "cost": {
+      "network_calls": {
+        "irs_files": 16
+      },
+      "seconds": 2.6,
+      "index": {
+        "used": true,
+        "built": "2026-11-25T05:53:15Z",
+        "fallback_reason": null
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "US Federal Contractor Check",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "company": {
+      "title": "Contractor",
+      "type": "string",
+      "editor": "textfield",
+      "description": "A company name, a 12-character UEI or a 5-character CAGE code.",
+      "prefill": "K19NE1KN3EL5"
+    },
+    "mode": {
+      "title": "Depth",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "snapshot",
+        "full"
+      ],
+      "enumTitles": [
+        "Snapshot",
+        "Full"
+      ],
+      "default": "snapshot",
+      "description": "Snapshot: registration, five-year totals, top five contracts, one verdict. Full: adds tables by year and agency, active contracts, modifications and subcontracts."
+    }
+  },
+  "required": [
+    "company"
+  ]
+}

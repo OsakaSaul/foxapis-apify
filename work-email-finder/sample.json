@@ -1,0 +1,20 @@
+{
+  "captured": "2026-11-23",
+  "input": {
+    "website": "stripe.com",
+    "name": "Patrick Collison"
+  },
+  "output": {
+    "success": true,
+    "email": "p***@stripe.com",
+    "email_status": "verified",
+    "verification": {
+      "status": "verified",
+      "checked": true,
+      "checked_at": "2026-11-23T06:42:32+00:00",
+      "method": "mailbox check",
+      "check_result": "ultra_sure"
+    },
+    "credits_used": 1
+  }
+}

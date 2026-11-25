@@ -1,0 +1,42 @@
+{
+  "title": "US Nonprofit Check",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "ein": {
+      "title": "EIN",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Fill in either the EIN or the name.",
+      "prefill": "26-3618722"
+    },
+    "name": {
+      "title": "Organization name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Fill in either the name or the EIN. A name that matches several organizations returns the candidates, free."
+    },
+    "state": {
+      "title": "State",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Two-letter state, to narrow a name search."
+    },
+    "mode": {
+      "title": "Depth",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "snapshot",
+        "full"
+      ],
+      "enumTitles": [
+        "Snapshot",
+        "Full"
+      ],
+      "default": "snapshot",
+      "description": "Snapshot: status, latest headline figures, one verdict. Full: adds filings, ratios, people and grants where the returns carry them."
+    }
+  },
+  "required": []
+}

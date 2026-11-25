@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "us-nonprofit-check",
+  "title": "US Nonprofit Check",
+  "description": "Check one US tax-exempt organization using the IRS files: exemption status, revocation list and headline figures, with more detail in full mode.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

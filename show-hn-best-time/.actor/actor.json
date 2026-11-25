@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "show-hn-best-time",
+  "title": "Show HN Best Time to Post",
+  "description": "How often Show HN posts reached 50 and 100 points: overall, for the best hour and day, and for the slot you ask about. Counts, not a prediction.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

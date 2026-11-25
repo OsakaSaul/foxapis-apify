@@ -1,0 +1,7 @@
+{
+  "email-found": {
+    "eventTitle": "Email found",
+    "eventDescription": "One email address returned for your input.",
+    "eventPriceUsd": 0.014
+  }
+}

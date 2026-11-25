@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "uk-company-search",
+  "title": "UK Company Register Search",
+  "description": "Search the UK company register by the start of a name, company number, status, country or industry code. Register facts only, no contacts.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

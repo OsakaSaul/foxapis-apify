@@ -1,0 +1,7 @@
+{
+  "changelog-lookup": {
+    "eventTitle": "Changelog lookup",
+    "eventDescription": "One lookup of a tracked product that returns entries.",
+    "eventPriceUsd": 0.005
+  }
+}

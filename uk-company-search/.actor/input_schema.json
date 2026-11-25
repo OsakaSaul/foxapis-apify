@@ -1,0 +1,54 @@
+{
+  "title": "UK Company Register Search",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "q": {
+      "title": "Company name starts with",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Matched from the start of the registered name.",
+      "prefill": "Tesco PLC"
+    },
+    "company_number": {
+      "title": "Company number",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Exact registered company number."
+    },
+    "status": {
+      "title": "Status",
+      "type": "string",
+      "editor": "textfield",
+      "description": "For example active or dissolved."
+    },
+    "country": {
+      "title": "Registered address country",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Country of the registered address."
+    },
+    "sic": {
+      "title": "Industry code",
+      "type": "string",
+      "editor": "textfield",
+      "description": "A standard industry classification code."
+    },
+    "page": {
+      "title": "Page",
+      "type": "integer",
+      "description": "Page of results, from 1.",
+      "default": 1,
+      "minimum": 1
+    },
+    "page_size": {
+      "title": "Results per page",
+      "type": "integer",
+      "description": "From 1 to 100.",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": []
+}

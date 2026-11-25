@@ -1,0 +1,25 @@
+{
+  "title": "Product Changelog Lookup",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "product": {
+      "title": "Product",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The product's name.",
+      "prefill": "Linear"
+    },
+    "limit": {
+      "title": "Entries",
+      "type": "integer",
+      "description": "How many of the newest entries.",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 50
+    }
+  },
+  "required": [
+    "product"
+  ]
+}

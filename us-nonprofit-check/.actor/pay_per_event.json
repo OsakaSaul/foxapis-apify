@@ -1,0 +1,12 @@
+{
+  "nonprofit-snapshot": {
+    "eventTitle": "Nonprofit snapshot",
+    "eventDescription": "One organization found, snapshot depth.",
+    "eventPriceUsd": 0.3
+  },
+  "nonprofit-full": {
+    "eventTitle": "Nonprofit full record",
+    "eventDescription": "One organization found, full depth.",
+    "eventPriceUsd": 2.2
+  }
+}

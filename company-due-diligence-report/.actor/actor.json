@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "company-due-diligence-report",
+  "title": "Company Due Diligence Report",
+  "description": "A sourced due diligence report on one company, written for the decision you pick, such as buying from them, joining them or lending to them. Takes several minutes.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

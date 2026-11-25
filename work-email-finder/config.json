@@ -1,0 +1,15 @@
+{
+  "method": "POST",
+  "path": "/v1/find_email",
+  "fields": [
+    "website",
+    "name"
+  ],
+  "required": [
+    "website"
+  ],
+  "event": "email-found",
+  "notDelivered": {
+    "success": false
+  }
+}

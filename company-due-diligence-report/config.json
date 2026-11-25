@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/v1/get_company_report",
+  "fields": [
+    "name",
+    "domain",
+    "angle",
+    "country"
+  ],
+  "oneOf": [
+    "name",
+    "domain"
+  ],
+  "event": "company-report",
+  "jobMinutes": 28,
+  "notDelivered": {
+    "status": "not_found"
+  }
+}

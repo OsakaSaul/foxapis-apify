@@ -1,0 +1,23 @@
+{
+  "title": "Work Email Finder",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "website": {
+      "title": "Company website",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The company's domain, for example example.com.",
+      "prefill": "example.com"
+    },
+    "name": {
+      "title": "Person's name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "First and last name of the person."
+    }
+  },
+  "required": [
+    "website"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/v1/nonprofit_vet",
+  "fields": [
+    "ein",
+    "name",
+    "state",
+    "mode"
+  ],
+  "exactlyOne": [
+    "ein",
+    "name"
+  ],
+  "eventByMode": {
+    "snapshot": "nonprofit-snapshot",
+    "full": "nonprofit-full"
+  },
+  "defaultMode": "snapshot",
+  "notDelivered": {
+    "resolved": false
+  }
+}

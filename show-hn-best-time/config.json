@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/v1/showhn/best_time",
+  "fields": [
+    "weekday",
+    "hour"
+  ],
+  "event": "slot-lookup"
+}

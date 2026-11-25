@@ -1,0 +1,15 @@
+{
+  "method": "POST",
+  "path": "/v1/changelog/product",
+  "fields": [
+    "product",
+    "limit"
+  ],
+  "required": [
+    "product"
+  ],
+  "event": "changelog-lookup",
+  "notDelivered": {
+    "tracked": false
+  }
+}

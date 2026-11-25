@@ -1,0 +1,22 @@
+{
+  "captured": "2026-11-22",
+  "input": {
+    "q": "Tesco PLC"
+  },
+  "output": [
+    {
+      "company_number": "00445790",
+      "company_name": "TESCO PLC",
+      "company_status": "active",
+      "company_type": "Public Limited Company",
+      "incorporation_date": "1947-11-27",
+      "jurisdiction": "united kingdom",
+      "reg_address_locality": "WELWYN GARDEN CITY",
+      "reg_address_country": "UNITED KINGDOM",
+      "sic_codes": [
+        "47110"
+      ],
+      "has_psc": false
+    }
+  ]
+}

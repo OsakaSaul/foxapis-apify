@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "work-email-finder",
+  "title": "Work Email Finder",
+  "description": "Find the most likely work email for a named person at a company domain, with a verification status. Charged only when an address is found.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

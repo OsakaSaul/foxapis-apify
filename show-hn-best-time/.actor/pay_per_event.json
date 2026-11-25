@@ -1,0 +1,7 @@
+{
+  "slot-lookup": {
+    "eventTitle": "Lookup",
+    "eventDescription": "One lookup that returns figures.",
+    "eventPriceUsd": 0.01
+  }
+}

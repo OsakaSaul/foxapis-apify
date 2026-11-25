@@ -1,0 +1,12 @@
+{
+  "contractor-snapshot": {
+    "eventTitle": "Contractor snapshot",
+    "eventDescription": "One contractor found, snapshot depth.",
+    "eventPriceUsd": 0.45
+  },
+  "contractor-full": {
+    "eventTitle": "Contractor full record",
+    "eventDescription": "One contractor found, full depth.",
+    "eventPriceUsd": 2.95
+  }
+}

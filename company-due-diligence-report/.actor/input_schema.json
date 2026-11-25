@@ -1,0 +1,56 @@
+{
+  "title": "Company Due Diligence Report",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "name": {
+      "title": "Company name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Fill in the name, the domain or both.",
+      "prefill": "Walmart"
+    },
+    "domain": {
+      "title": "Company website",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The company's domain."
+    },
+    "angle": {
+      "title": "Decision",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "supplier_contract",
+        "job_offer",
+        "acquirer",
+        "acquihire",
+        "lender_landlord",
+        "selling_to",
+        "investor_partner",
+        "reseller",
+        "compete"
+      ],
+      "enumTitles": [
+        "Signing a supplier contract",
+        "Weighing a job offer",
+        "Buying the company",
+        "Hiring the team by buying it",
+        "Lending or renting to them",
+        "Selling to them",
+        "Investing or partnering",
+        "Reselling for them",
+        "Competing with them"
+      ],
+      "default": "supplier_contract",
+      "description": "The decision the report is written for."
+    },
+    "country": {
+      "title": "Country",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Where the company is, if the name is common."
+    }
+  },
+  "required": []
+}

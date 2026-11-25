@@ -1,0 +1,31 @@
+{
+  "captured": "2026-11-22",
+  "input": {
+    "product": "Linear",
+    "limit": 10
+  },
+  "output": {
+    "tracked": true,
+    "product": "Linear",
+    "entries_held": 62,
+    "homepage": "https://linear.app",
+    "entries": [
+      {
+        "date": "2026-11-05",
+        "title": "Mobile Diffs",
+        "summary": "Diffs, the review experience, is now available on iOS and Android, with guided reviews, inbox review items, preview links and merging from the phone. Several agent display fixes are also included.",
+        "link": "https://linear.app/changelog/2026-11-04-mobile-diffs",
+        "source_feed": "https://linear.app/rss/changelog.xml"
+      },
+      {
+        "date": "2026-10-22",
+        "title": "More ways to run and share Loops",
+        "summary": "Loops can now be started by Slack and GitHub events, saved as shareable templates, and given customized reasoning levels.",
+        "link": "https://linear.app/changelog/2026-10-22-slack-and-github-loops",
+        "source_feed": "https://linear.app/rss/changelog.xml"
+      },
+      "[7 more shortened]"
+    ],
+    "credits_used": 1
+  }
+}

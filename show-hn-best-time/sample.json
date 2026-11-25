@@ -1,0 +1,68 @@
+{
+  "captured": "2026-11-22",
+  "input": {
+    "weekday": "2",
+    "hour": "15"
+  },
+  "output": {
+    "note": "weekday 0 = Sunday; hours are UTC; a post counts when it has reached the points at any time",
+    "slot": {
+      "posts": 817,
+      "rate_50": 3.3,
+      "weekday": 2,
+      "hour_utc": 15,
+      "rate_100": 1.59,
+      "reached_50": 27,
+      "reached_100": 13
+    },
+    "posts": 49342,
+    "by_hour": [
+      {
+        "posts": 1200,
+        "rate_50": 3.83,
+        "hour_utc": 0,
+        "reached_50": 46
+      },
+      {
+        "posts": 1053,
+        "rate_50": 2.28,
+        "hour_utc": 1,
+        "reached_50": 24
+      },
+      "[22 more shortened]"
+    ],
+    "rate_50": 2.88,
+    "best_day": {
+      "posts": 5351,
+      "rate_50": 3.44,
+      "weekday": 0,
+      "reached_50": 184
+    },
+    "best_hour": {
+      "posts": 3565,
+      "rate_50": 4.04,
+      "hour_utc": 16,
+      "reached_50": 144
+    },
+    "window_to": "2026-11-22",
+    "by_weekday": [
+      {
+        "posts": 5351,
+        "rate_50": 3.44,
+        "weekday": 0,
+        "reached_50": 184
+      },
+      {
+        "posts": 7396,
+        "rate_50": 3.07,
+        "weekday": 1,
+        "reached_50": 227
+      },
+      "[5 more shortened]"
+    ],
+    "reached_50": 1422,
+    "reached_100": 802,
+    "window_from": "2025-11-22",
+    "credits_used": 1
+  }
+}
