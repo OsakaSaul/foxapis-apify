@@ -1,0 +1,58 @@
+{
+  "captured": "2026-11-25",
+  "input": {
+    "name": "Microsoft"
+  },
+  "output": {
+    "as_of": "2026-11-25T21:16:59.744539+00:00",
+    "identity": {
+      "query": {
+        "name": "Microsoft"
+      },
+      "matches": [
+        {
+          "how": "exactly one SEC filer has this name",
+          "kind": "sec_cik",
+          "value": 789019,
+          "confidence": "high"
+        }
+      ],
+      "resolved": {
+        "sec_cik": 789019
+      }
+    },
+    "layoff_notices": {
+      "count": 7,
+      "source": "US state WARN layoff notices",
+      "notices": [
+        {
+          "city": "Redmond",
+          "type": "layoff",
+          "state": "WA",
+          "employees": 277,
+          "matched_by": "SEC CIK",
+          "source_url": "https://fortress.wa.gov/esd/file/WARN",
+          "notice_date": "2026-09-22",
+          "effective_date": "2026-11-21",
+          "company_as_filed": "Microsoft"
+        },
+        {
+          "city": "Redmond",
+          "type": "layoff",
+          "state": "WA",
+          "employees": 605,
+          "matched_by": "SEC CIK",
+          "source_url": "https://fortress.wa.gov/esd/file/WARN",
+          "notice_date": "2026-07-06",
+          "effective_date": "2026-09-04",
+          "company_as_filed": "Microsoft"
+        },
+        "[5 more shortened]"
+      ],
+      "confidence": "linked to the SEC filer, or exact company name",
+      "last_notice": "2026-09-22",
+      "first_notice": "2025-05-13",
+      "employees_total": 4084
+    }
+  }
+}

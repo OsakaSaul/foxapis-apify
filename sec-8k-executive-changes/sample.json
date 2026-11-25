@@ -1,0 +1,62 @@
+{
+  "captured": "2026-11-25",
+  "input": {
+    "company": "LKQ",
+    "page_size": 2
+  },
+  "output": {
+    "page": 1,
+    "as_of": "2026-11-25T21:17:09.619307+00:00",
+    "source": "SEC Form 8-K filings, Item 5.02",
+    "records": [
+      {
+        "form": "8-K",
+        "filed": "2026-11-19",
+        "changes": [
+          {
+            "role": "Director",
+            "person": "[name removed from this sample]",
+            "sentence": "[name removed from this sample]",
+            "change_type": "departed"
+          }
+        ],
+        "company": "LKQ CORP",
+        "sec_cik": "1065696",
+        "tickers": "LKQ",
+        "accession": "0001065696-26-000063",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1065696/000106569626000063/0001065696-26-000063-index.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/1065696/000106569626000063/lkq-20261118.htm"
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-11-16",
+        "changes": [
+          {
+            "role": "Senior Vice President",
+            "person": "[name removed from this sample]",
+            "sentence": "[name removed from this sample]",
+            "change_type": "departed",
+            "effective_date": "2027-01-01"
+          }
+        ],
+        "company": "LKQ CORP",
+        "sec_cik": "1065696",
+        "tickers": "LKQ",
+        "accession": "0001065696-26-000061",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1065696/000106569626000061/0001065696-26-000061-index.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/1065696/000106569626000061/lkq-20261111.htm"
+      }
+    ],
+    "has_data": true,
+    "page_size": 2,
+    "coverage_from": "2026-01-02",
+    "total_matching": 4,
+    "companies_matched": [
+      {
+        "company": "LKQ CORP",
+        "sec_cik": "1065696"
+      }
+    ],
+    "companies_matched_count": 1
+  }
+}

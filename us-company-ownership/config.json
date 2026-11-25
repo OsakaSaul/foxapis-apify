@@ -1,0 +1,18 @@
+{
+  "method": "POST",
+  "path": "/v1/ownership",
+  "fields": [
+    "ticker",
+    "sec_cik",
+    "company"
+  ],
+  "exactlyOne": [
+    "ticker",
+    "sec_cik",
+    "company"
+  ],
+  "event": "ownership-record",
+  "notDelivered": {
+    "has_data": false
+  }
+}

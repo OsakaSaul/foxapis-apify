@@ -1,0 +1,59 @@
+{
+  "title": "SEC 8-K Executive Changes",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "company": {
+      "title": "Company name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Words from the company name; every word must appear as a whole word.",
+      "prefill": "LKQ"
+    },
+    "cik": {
+      "title": "SEC CIK number",
+      "type": "integer",
+      "description": "That company only."
+    },
+    "person": {
+      "title": "Person",
+      "type": "string",
+      "editor": "textfield",
+      "description": "First and last name."
+    },
+    "accession": {
+      "title": "Accession number",
+      "type": "string",
+      "editor": "textfield",
+      "description": "One exact filing. Send it on its own."
+    },
+    "filed_from": {
+      "title": "Filed from",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Filings filed on or after this date, YYYY-MM-DD."
+    },
+    "filed_to": {
+      "title": "Filed to",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Filings filed on or before this date, YYYY-MM-DD."
+    },
+    "page": {
+      "title": "Page",
+      "type": "integer",
+      "description": "Page of results, from 1.",
+      "default": 1,
+      "minimum": 1
+    },
+    "page_size": {
+      "title": "Most filings to return",
+      "type": "integer",
+      "description": "From 1 to 25. You pay for each filing returned.",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 25
+    }
+  },
+  "required": []
+}

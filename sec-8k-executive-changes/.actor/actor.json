@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "sec-8k-executive-changes",
+  "title": "SEC 8-K Executive Changes",
+  "description": "Appointments and departures that US public companies report on Form 8-K, Item 5.02, one record per filing.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

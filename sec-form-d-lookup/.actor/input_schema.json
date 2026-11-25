@@ -1,0 +1,20 @@
+{
+  "title": "SEC Form D Raise Lookup",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "accession": {
+      "title": "Accession number",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The SEC accession number of one Form D filing. Use this or the CIK.",
+      "prefill": "0001692147-26-000001"
+    },
+    "cik": {
+      "title": "SEC CIK number",
+      "type": "integer",
+      "description": "The company's CIK, for its Form D history. Use this or the accession number."
+    }
+  },
+  "required": []
+}

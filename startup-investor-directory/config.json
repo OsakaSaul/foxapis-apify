@@ -1,0 +1,35 @@
+{
+  "method": "GET",
+  "path": "/v1/investors/search",
+  "fields": [
+    "slug",
+    "q",
+    "thesis",
+    "sector",
+    "stage",
+    "region",
+    "country_code",
+    "check_size_min",
+    "check_size_max",
+    "page",
+    "page_size"
+  ],
+  "event": "investor-search-with-results",
+  "oneOf": [
+    "slug",
+    "q",
+    "thesis",
+    "sector",
+    "stage",
+    "region",
+    "country_code",
+    "check_size_min",
+    "check_size_max"
+  ],
+  "drop": [
+    "has_email",
+    "enrich_cost_credits",
+    "photo_url",
+    "page_url"
+  ]
+}

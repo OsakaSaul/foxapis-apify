@@ -14,10 +14,10 @@ try {
             // outside pay-per-event pricing (local runs, before monetization is set up) nothing limits the run
             chargeableCount: async (event) => {
                 const manager = Actor.getChargingManager();
-                if (!manager.getPricingInfo().isPayPerEvent) return 1;
+                if (!manager.getPricingInfo().isPayPerEvent) return 1000;
                 return manager.calculateMaxEventChargeCountWithinLimit(event);
             },
-            charge: (event) => Actor.charge({ eventName: event }),
+            charge: (event, count = 1) => Actor.charge({ eventName: event, count }),
         },
         env: process.env,
         fetchFn: fetch,

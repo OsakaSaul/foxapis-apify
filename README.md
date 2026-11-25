@@ -1,6 +1,6 @@
 # Actors
 
-Seven small Apify Actors, one folder each. Each calls the publisher's data API and returns the answer as dataset items.
+Twelve small Apify Actors, one folder each. Each calls the publisher's data API and returns the answer as dataset items.
 
 | Folder | Charged events (USD) |
 | --- | --- |
@@ -11,6 +11,11 @@ Seven small Apify Actors, one folder each. Each calls the publisher's data API a
 | company-due-diligence-report | company-report 7.40 |
 | show-hn-best-time | slot-lookup 0.01 |
 | product-changelog-lookup | changelog-lookup 0.005 |
+| sec-form-d-lookup | form-d-found 0.015 |
+| us-layoff-notice-lookup | layoff-notices-found 0.015 |
+| sec-8k-executive-changes | filing-returned 0.015 (one event per filing) |
+| us-company-ownership | ownership-record 0.015 |
+| startup-investor-directory | investor-search-with-results 0.01 |
 
 ## Editing
 

@@ -1,0 +1,26 @@
+{
+  "title": "US Layoff Notice (WARN) Lookup",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "name": {
+      "title": "Company name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The company's legal or trading name. Give exactly one of name, domain or CIK.",
+      "prefill": "Microsoft"
+    },
+    "domain": {
+      "title": "Website domain",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The company's domain, for example example.com."
+    },
+    "cik": {
+      "title": "SEC CIK number",
+      "type": "integer",
+      "description": "The company's CIK, for companies that file with the SEC."
+    }
+  },
+  "required": []
+}

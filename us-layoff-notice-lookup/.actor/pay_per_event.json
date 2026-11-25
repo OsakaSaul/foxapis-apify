@@ -1,0 +1,7 @@
+{
+  "layoff-notices-found": {
+    "eventTitle": "Company with layoff notices",
+    "eventDescription": "One company lookup that returns at least one layoff notice.",
+    "eventPriceUsd": 0.015
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "us-company-ownership",
+  "title": "US Public Company Ownership",
+  "description": "Who holds a US public company according to its SEC filings: large holder reports, insider holdings and acquisition reports.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

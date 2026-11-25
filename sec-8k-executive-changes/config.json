@@ -1,0 +1,37 @@
+{
+  "method": "POST",
+  "path": "/v1/executive_changes",
+  "fields": [
+    "accession",
+    "cik",
+    "company",
+    "person",
+    "filed_from",
+    "filed_to",
+    "page",
+    "page_size"
+  ],
+  "oneOf": [
+    "accession",
+    "cik",
+    "company",
+    "person",
+    "filed_from"
+  ],
+  "event": "filing-returned",
+  "notDelivered": {
+    "has_data": false
+  },
+  "perRecord": {
+    "listKey": "records",
+    "sizeField": "page_size",
+    "default": 5,
+    "max": 25,
+    "exact": "accession",
+    "shared": [
+      "source",
+      "coverage_from",
+      "as_of"
+    ]
+  }
+}

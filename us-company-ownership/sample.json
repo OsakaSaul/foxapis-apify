@@ -1,0 +1,98 @@
+{
+  "captured": "2026-11-25",
+  "input": {
+    "ticker": "ECHO"
+  },
+  "output": {
+    "as_of": "2026-11-25T21:17:11.520995+00:00",
+    "record": {
+      "company": "EchoStar CORP",
+      "sec_cik": "1415404",
+      "tickers": [
+        {
+          "ticker": "ECHO",
+          "exchange": "Nasdaq"
+        }
+      ],
+      "insider_holdings": [
+        {
+          "form": "4",
+          "name": "[name removed from this sample]",
+          "filed": "2026-07-31",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000090454826000015/0000904548-26-000015-index.htm",
+          "is_officer": false,
+          "is_director": true,
+          "joint_filing": true,
+          "shares_direct": 11140269,
+          "shares_indirect": 1551355,
+          "period_of_report": "2026-07-29",
+          "is_ten_percent_owner": true
+        },
+        {
+          "form": "4",
+          "name": "[name removed from this sample]",
+          "filed": "2026-07-31",
+          "title": "CHAIRMAN, PRES and CEO",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000090454826000015/0000904548-26-000015-index.htm",
+          "is_officer": true,
+          "is_director": true,
+          "joint_filing": true,
+          "shares_direct": 11140269,
+          "shares_indirect": 1551355,
+          "period_of_report": "2026-07-29",
+          "is_ten_percent_owner": true
+        },
+        "[13 more shortened]"
+      ],
+      "acquisition_reports": [
+        {
+          "form": "8-K",
+          "filed": "2026-10-02",
+          "filer_role": "unclear",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000141540426000048/0001415404-26-000048-index.htm"
+        },
+        {
+          "form": "8-K",
+          "filed": "2026-07-28",
+          "filer_role": "unclear",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000141540426000035/0001415404-26-000035-index.htm"
+        }
+      ],
+      "large_holder_reports": [
+        {
+          "form": "SCHEDULE 13G/A",
+          "filed": "2026-11-16",
+          "holders": [
+            "[name removed from this sample]",
+            "[name removed from this sample]",
+            "[1 more shortened]"
+          ],
+          "event_date": "2026-09-30",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000090221926000388/0000902219-26-000388-index.htm",
+          "share_class": "Common Stock"
+        },
+        {
+          "form": "SCHEDULE 13G",
+          "filed": "2026-11-10",
+          "holders": [
+            "[name removed from this sample]"
+          ],
+          "event_date": "2026-09-30",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000009375126000650/0000093751-26-000650-index.htm",
+          "share_class": "COMMON STOCK"
+        },
+        "[18 more shortened]"
+      ]
+    },
+    "status": "found",
+    "sources": {
+      "shares": "SEC periodic reports",
+      "insider_holdings": "SEC Forms 3, 4 and 5",
+      "acquisition_reports": "SEC current reports filed by the company",
+      "large_holder_reports": "SEC Schedules 13D and 13G"
+    },
+    "has_data": true,
+    "matched_on": "ticker",
+    "not_included": "Quarterly institutional holdings (Form 13F) are not included: an institution appears only if it filed a Schedule 13D or 13G. Those reports start above 5 percent, and a later amendment can show a smaller holding. A holding is as of its filing date and may have changed since."
+  }
+}

@@ -43,6 +43,33 @@ export function delivered(config, result) {
     return Object.keys(result).length > 0;
 }
 
+// Our own billing fields and anything that offers something outside the platform never reach the user's dataset.
+const ALWAYS_DROP = ['credits_charged', 'credits_used'];
+export function strip(value, extra = []) {
+    const drop = new Set([...ALWAYS_DROP, ...extra]);
+    const walk = (v) => {
+        if (Array.isArray(v)) return v.map(walk);
+        if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).filter(([k]) => !drop.has(k)).map(([k, x]) => [k, walk(x)]));
+        return v;
+    };
+    return walk(value);
+}
+
+// deliveredIf: a company lookup can answer with data while holding none of what this Actor sells; it is billable only when one of these is there.
+export function holds(config, result) {
+    if (!config.deliveredIf) return true;
+    return config.deliveredIf.some((path) => {
+        const v = path.split('.').reduce((o, k) => (o === null || o === undefined ? o : o[k]), result);
+        return Array.isArray(v) ? v.length > 0 : Boolean(v);
+    });
+}
+
+// outputKeys: of a wide company record, only the parts this Actor describes are passed on.
+export function narrow(config, result) {
+    if (!config.outputKeys || !result || Array.isArray(result)) return result;
+    return Object.fromEntries(config.outputKeys.filter((k) => k in result).map((k) => [k, result[k]]));
+}
+
 export class UserError extends Error {}
 
 function failureText(status) {
@@ -65,7 +92,16 @@ export async function run(config, { actor, env, fetchFn, sample, sleep, now = Da
 
     const key = env.FOXAPIS_API_KEY;
     if (!key) throw new Error('This Actor is not configured yet. You were not charged.');
-    if ((await actor.chargeableCount(event)) < 1) return { outcome: 'limit', message: 'The spending limit set for this run is lower than the price of one result. Raise it and run again. Nothing was charged.' };
+    const room = await actor.chargeableCount(event);
+    if (room < 1) return { outcome: 'limit', message: 'The spending limit set for this run is lower than the price of one result. Raise it and run again. Nothing was charged.' };
+
+    // a call priced per record never asks for more records than the run's spending limit covers
+    const per = config.perRecord;
+    if (per) {
+        const wanted = Number(fields[per.sizeField]) || per.default;
+        fields[per.sizeField] = Math.max(1, Math.min(Math.floor(wanted), per.max, Math.floor(Math.min(room, per.max))));
+        if (per.exact && fields[per.exact] !== undefined) delete fields[per.sizeField];
+    }
 
     // the base address can be changed only off the platform, for local tests
     const base = !env.APIFY_IS_AT_HOME && env.SERVICE_BASE ? env.SERVICE_BASE : SERVICE;
@@ -96,8 +132,21 @@ export async function run(config, { actor, env, fetchFn, sample, sleep, now = Da
         }
     }
 
-    const billable = delivered(config, body) && charged !== '0';
-    await actor.pushData(clean(Array.isArray(body) ? body : [body]));
+    const billable = delivered(config, body) && holds(config, body) && charged !== '0';
+    if (per) {
+        // one dataset item and one event for each record returned
+        const records = Array.isArray(body?.[per.listKey]) ? body[per.listKey] : [];
+        const shared = Object.fromEntries((per.shared || []).filter((k) => k in body).map((k) => [k, body[k]]));
+        if (!billable || records.length === 0) {
+            await actor.pushData(clean(strip([{ ...shared, [per.listKey]: [] }], config.drop)));
+            return { outcome: 'free', message: 'No billable result for this input. Nothing was charged.' };
+        }
+        const count = Math.min(records.length, Math.max(1, Math.floor(Math.min(room, per.max))));
+        await actor.pushData(clean(strip(records.slice(0, count).map((r) => ({ ...r, ...shared })), config.drop)));
+        await actor.charge(event, count);
+        return { outcome: 'charged', event, count, message: `Done: ${count} record(s).` };
+    }
+    await actor.pushData(clean(strip(Array.isArray(body) ? body : [narrow(config, body)], config.drop)));
     if (!billable) return { outcome: 'free', message: 'No billable result for this input. Nothing was charged.' };
     await actor.charge(event);
     return { outcome: 'charged', event, message: 'Done.' };

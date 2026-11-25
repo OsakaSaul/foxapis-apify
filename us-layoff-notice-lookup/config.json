@@ -1,0 +1,29 @@
+{
+  "method": "POST",
+  "path": "/v1/brand/record",
+  "fields": [
+    "name",
+    "domain",
+    "cik"
+  ],
+  "exactlyOne": [
+    "name",
+    "domain",
+    "cik"
+  ],
+  "event": "layoff-notices-found",
+  "notDelivered": {
+    "has_data": false
+  },
+  "deliveredIf": [
+    "layoff_notices.notices"
+  ],
+  "outputKeys": [
+    "as_of",
+    "identity",
+    "layoff_notices"
+  ],
+  "drop": [
+    "page_url"
+  ]
+}

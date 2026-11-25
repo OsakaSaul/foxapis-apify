@@ -77,6 +77,37 @@ ok('search uses the query string', w.calls[0].url.endsWith('/v1/companies/search
 ok('clean drops service links', clean('see https://foxapis.com/x now') === 'see  now');
 ok('delivered: untracked product is not billable', !delivered(byName['product-changelog-lookup'].config, { tracked: false }));
 
+const fd = byName['sec-8k-executive-changes'].config;
+w = world({ company: 'x', page_size: 25 }, { room: 3, replies: [{ body: { has_data: true, records: [{ a: 1 }, { a: 2 }, { a: 3 }], source: 's', credits_charged: 30 }, charged: '30' }] });
+r = await go(fd, w);
+ok('per record: never asks for more than the limit covers', JSON.parse(w.calls[0].options.body).page_size === 3);
+ok('per record: one event for each record, one item each', w.charges.join() === 'filing-returned' && r.count === 3 && w.pushed[0].length === 3 && w.pushed[0][0].source === 's');
+ok('our credit fields never reach the dataset', !JSON.stringify(w.pushed).includes('credits_charged'));
+w = world({ company: 'x' }, { room: 1000, replies: [{ body: { has_data: false, records: [] }, charged: '0' }] });
+r = await go(fd, w);
+ok('per record: nothing returned, nothing charged, default 5 asked', w.charges.length === 0 && JSON.parse(w.calls[0].options.body).page_size === 5);
+w = world({ accession: '0001065696-26-000047' }, { room: 9, replies: [{ body: { has_data: true, records: [{ a: 1 }] }, charged: '10' }] });
+await go(fd, w);
+ok('per record: an exact filing is sent on its own', !('page_size' in JSON.parse(w.calls[0].options.body)));
+
+const lay = byName['us-layoff-notice-lookup'].config;
+w = world({ name: 'x' }, { replies: [{ body: { has_data: true, patents: { count: 2 } }, charged: '10' }] });
+r = await go(lay, w);
+ok('layoff: a company record with no notices is not charged, other parts not passed on', w.charges.length === 0 && !JSON.stringify(w.pushed).includes('patents'));
+w = world({ name: 'x' }, { replies: [{ body: { has_data: true, layoff_notices: { count: 1, notices: [{ state: 'WA' }] }, patents: {} }, charged: '10' }] });
+r = await go(lay, w);
+ok('layoff: notices found, one charge', w.charges.join() === 'layoff-notices-found' && w.pushed[0][0].layoff_notices.count === 1);
+
+const own = byName['us-company-ownership'].config;
+w = world({ company: 'bank' }, { replies: [{ body: { has_data: false, status: 'several', candidates: [1, 2] }, charged: '0' }] });
+await go(own, w);
+ok('ownership: a list of candidates is free', w.charges.length === 0);
+
+const inv = byName['startup-investor-directory'].config;
+w = world({ sector: 'fintech' }, { replies: [{ body: [{ name: 'a', has_email: true, enrich_cost_credits: 30 }], charged: '5' }] });
+await go(inv, w);
+ok('investors: one charge, no paid-contact fields passed on', w.charges.length === 1 && !JSON.stringify(w.pushed).includes('enrich') && !JSON.stringify(w.pushed).includes('has_email'));
+
 for (const a of actors) {
     const readme = readFileSync(new URL(`./${a.name}/README.md`, import.meta.url), 'utf8');
     ok(`${a.name}: README links to and promotes no outside product`, !/foxapis|mentionfox/i.test(readme));

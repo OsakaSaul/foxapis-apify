@@ -1,0 +1,31 @@
+{
+  "method": "POST",
+  "path": "/v1/brand/record",
+  "fields": [
+    "accession",
+    "cik"
+  ],
+  "exactlyOne": [
+    "accession",
+    "cik"
+  ],
+  "event": "form-d-found",
+  "notDelivered": {
+    "has_data": false
+  },
+  "deliveredIf": [
+    "record",
+    "form_d_raises.filings"
+  ],
+  "outputKeys": [
+    "as_of",
+    "record_type",
+    "record",
+    "identity",
+    "form_d_raises",
+    "source"
+  ],
+  "drop": [
+    "page_url"
+  ]
+}

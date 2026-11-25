@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "us-layoff-notice-lookup",
+  "title": "US Layoff Notice (WARN) Lookup",
+  "description": "Find the US state layoff notices held for one company, by company name, website domain or SEC CIK number.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

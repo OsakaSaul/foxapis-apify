@@ -5,18 +5,89 @@
       "title": "UK Company Register Search",
       "description": "Search the UK company register by the start of a name, company number, status, country or industry code. Register facts only, no contacts.",
       "sample": "companies-search",
-      "config": { "method": "GET", "path": "/v1/companies/search", "fields": ["q", "company_number", "status", "country", "sic", "page", "page_size"], "oneOf": ["q", "company_number", "status", "country", "sic"], "event": "search-with-results" },
-      "input": {
-        "q": { "title": "Company name starts with", "type": "string", "editor": "textfield", "description": "Matched from the start of the registered name.", "prefill": "Tesco PLC" },
-        "company_number": { "title": "Company number", "type": "string", "editor": "textfield", "description": "Exact registered company number." },
-        "status": { "title": "Status", "type": "string", "editor": "textfield", "description": "For example active or dissolved." },
-        "country": { "title": "Registered address country", "type": "string", "editor": "textfield", "description": "Country of the registered address." },
-        "sic": { "title": "Industry code", "type": "string", "editor": "textfield", "description": "A standard industry classification code." },
-        "page": { "title": "Page", "type": "integer", "description": "Page of results, from 1.", "default": 1, "minimum": 1 },
-        "page_size": { "title": "Results per page", "type": "integer", "description": "From 1 to 100.", "default": 25, "minimum": 1, "maximum": 100 }
+      "config": {
+        "method": "GET",
+        "path": "/v1/companies/search",
+        "fields": [
+          "q",
+          "company_number",
+          "status",
+          "country",
+          "sic",
+          "page",
+          "page_size"
+        ],
+        "oneOf": [
+          "q",
+          "company_number",
+          "status",
+          "country",
+          "sic"
+        ],
+        "event": "search-with-results"
       },
-      "events": [{ "name": "search-with-results", "title": "Search with results", "description": "One search that returns at least one company, up to 100 rows.", "usd": 0.01, "credits": 5 }],
-      "returns": ["Company name, number, status, type and incorporation date", "Jurisdiction, registered address town and country, industry codes", "Whether the register holds persons of significant control for the company"],
+      "input": {
+        "q": {
+          "title": "Company name starts with",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Matched from the start of the registered name.",
+          "prefill": "Tesco PLC"
+        },
+        "company_number": {
+          "title": "Company number",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Exact registered company number."
+        },
+        "status": {
+          "title": "Status",
+          "type": "string",
+          "editor": "textfield",
+          "description": "For example active or dissolved."
+        },
+        "country": {
+          "title": "Registered address country",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Country of the registered address."
+        },
+        "sic": {
+          "title": "Industry code",
+          "type": "string",
+          "editor": "textfield",
+          "description": "A standard industry classification code."
+        },
+        "page": {
+          "title": "Page",
+          "type": "integer",
+          "description": "Page of results, from 1.",
+          "default": 1,
+          "minimum": 1
+        },
+        "page_size": {
+          "title": "Results per page",
+          "type": "integer",
+          "description": "From 1 to 100.",
+          "default": 25,
+          "minimum": 1,
+          "maximum": 100
+        }
+      },
+      "events": [
+        {
+          "name": "search-with-results",
+          "title": "Search with results",
+          "description": "One search that returns at least one company, up to 100 rows.",
+          "usd": 0.01,
+          "credits": 5
+        }
+      ],
+      "returns": [
+        "Company name, number, status, type and incorporation date",
+        "Jurisdiction, registered address town and country, industry codes",
+        "Whether the register holds persons of significant control for the company"
+      ],
       "limits": "Covers the UK register only. The data is held from the register and can lag behind it; check the official register before relying on a record. At least one filter is needed."
     },
     {
@@ -24,13 +95,50 @@
       "title": "Work Email Finder",
       "description": "Find the most likely work email for a named person at a company domain, with a verification status. Charged only when an address is found.",
       "sample": "find_email",
-      "config": { "method": "POST", "path": "/v1/find_email", "fields": ["website", "name"], "required": ["website"], "event": "email-found", "notDelivered": { "success": false } },
-      "input": {
-        "website": { "title": "Company website", "type": "string", "editor": "textfield", "description": "The company's domain, for example example.com.", "prefill": "example.com" },
-        "name": { "title": "Person's name", "type": "string", "editor": "textfield", "description": "First and last name of the person." }
+      "config": {
+        "method": "POST",
+        "path": "/v1/find_email",
+        "fields": [
+          "website",
+          "name"
+        ],
+        "required": [
+          "website"
+        ],
+        "event": "email-found",
+        "notDelivered": {
+          "success": false
+        }
       },
-      "events": [{ "name": "email-found", "title": "Email found", "description": "One email address returned for your input.", "usd": 0.014, "credits": 10 }],
-      "returns": ["The email address", "A verification status: verified, risky or invalid", "When it was checked"],
+      "input": {
+        "website": {
+          "title": "Company website",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The company's domain, for example example.com.",
+          "prefill": "example.com"
+        },
+        "name": {
+          "title": "Person's name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "First and last name of the person."
+        }
+      },
+      "events": [
+        {
+          "name": "email-found",
+          "title": "Email found",
+          "description": "One email address returned for your input.",
+          "usd": 0.014,
+          "credits": 10
+        }
+      ],
+      "returns": [
+        "The email address",
+        "A verification status: verified, risky or invalid",
+        "When it was checked"
+      ],
       "limits": "A status is not a delivery guarantee. Use the addresses only where the law allows you to contact that person, and honour opt-outs. The address in the sample is masked."
     },
     {
@@ -38,16 +146,70 @@
       "title": "US Federal Contractor Check",
       "description": "Check one US federal contractor against the official public records: registration, totals, largest contracts and, in full mode, tables by year and agency.",
       "sample": "govcon_vet-full",
-      "config": { "method": "POST", "path": "/v1/govcon_vet", "fields": ["company", "mode"], "required": ["company"], "eventByMode": { "snapshot": "contractor-snapshot", "full": "contractor-full" }, "defaultMode": "snapshot", "notDelivered": { "found": false } },
+      "config": {
+        "method": "POST",
+        "path": "/v1/govcon_vet",
+        "fields": [
+          "company",
+          "mode"
+        ],
+        "required": [
+          "company"
+        ],
+        "eventByMode": {
+          "snapshot": "contractor-snapshot",
+          "full": "contractor-full"
+        },
+        "defaultMode": "snapshot",
+        "notDelivered": {
+          "found": false
+        }
+      },
       "input": {
-        "company": { "title": "Contractor", "type": "string", "editor": "textfield", "description": "A company name, a 12-character UEI or a 5-character CAGE code.", "prefill": "K19NE1KN3EL5" },
-        "mode": { "title": "Depth", "type": "string", "editor": "select", "enum": ["snapshot", "full"], "enumTitles": ["Snapshot", "Full"], "default": "snapshot", "description": "Snapshot: registration, five-year totals, top five contracts, one verdict. Full: adds tables by year and agency, active contracts, modifications and subcontracts." }
+        "company": {
+          "title": "Contractor",
+          "type": "string",
+          "editor": "textfield",
+          "description": "A company name, a 12-character UEI or a 5-character CAGE code.",
+          "prefill": "K19NE1KN3EL5"
+        },
+        "mode": {
+          "title": "Depth",
+          "type": "string",
+          "editor": "select",
+          "enum": [
+            "snapshot",
+            "full"
+          ],
+          "enumTitles": [
+            "Snapshot",
+            "Full"
+          ],
+          "default": "snapshot",
+          "description": "Snapshot: registration, five-year totals, top five contracts, one verdict. Full: adds tables by year and agency, active contracts, modifications and subcontracts."
+        }
       },
       "events": [
-        { "name": "contractor-snapshot", "title": "Contractor snapshot", "description": "One contractor found, snapshot depth.", "usd": 0.45, "credits": 300 },
-        { "name": "contractor-full", "title": "Contractor full record", "description": "One contractor found, full depth.", "usd": 2.95, "credits": 2000 }
+        {
+          "name": "contractor-snapshot",
+          "title": "Contractor snapshot",
+          "description": "One contractor found, snapshot depth.",
+          "usd": 0.45,
+          "credits": 300
+        },
+        {
+          "name": "contractor-full",
+          "title": "Contractor full record",
+          "description": "One contractor found, full depth.",
+          "usd": 2.95,
+          "credits": 2000
+        }
       ],
-      "returns": ["Registration details and how the contractor was matched", "Five-year totals and the largest contracts, with record links", "A plain verdict, and what was not checked"],
+      "returns": [
+        "Registration details and how the contractor was matched",
+        "Five-year totals and the largest contracts, with record links",
+        "A plain verdict, and what was not checked"
+      ],
       "limits": "US federal records only, as of the date shown in the result. It is not legal advice and not a complete responsibility check: confirm exclusions on the official site before an award decision."
     },
     {
@@ -55,18 +217,85 @@
       "title": "US Nonprofit Check",
       "description": "Check one US tax-exempt organization using the IRS files: exemption status, revocation list and headline figures, with more detail in full mode.",
       "sample": "nonprofit_vet-mid-size",
-      "config": { "method": "POST", "path": "/v1/nonprofit_vet", "fields": ["ein", "name", "state", "mode"], "exactlyOne": ["ein", "name"], "eventByMode": { "snapshot": "nonprofit-snapshot", "full": "nonprofit-full" }, "defaultMode": "snapshot", "notDelivered": { "resolved": false } },
+      "config": {
+        "method": "POST",
+        "path": "/v1/nonprofit_vet",
+        "fields": [
+          "ein",
+          "name",
+          "state",
+          "mode"
+        ],
+        "exactlyOne": [
+          "ein",
+          "name"
+        ],
+        "eventByMode": {
+          "snapshot": "nonprofit-snapshot",
+          "full": "nonprofit-full"
+        },
+        "defaultMode": "snapshot",
+        "notDelivered": {
+          "resolved": false
+        }
+      },
       "input": {
-        "ein": { "title": "EIN", "type": "string", "editor": "textfield", "description": "Fill in either the EIN or the name.", "prefill": "26-3618722" },
-        "name": { "title": "Organization name", "type": "string", "editor": "textfield", "description": "Fill in either the name or the EIN. A name that matches several organizations returns the candidates, free." },
-        "state": { "title": "State", "type": "string", "editor": "textfield", "description": "Two-letter state, to narrow a name search." },
-        "mode": { "title": "Depth", "type": "string", "editor": "select", "enum": ["snapshot", "full"], "enumTitles": ["Snapshot", "Full"], "default": "snapshot", "description": "Snapshot: status, latest headline figures, one verdict. Full: adds filings, ratios, people and grants where the returns carry them." }
+        "ein": {
+          "title": "EIN",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Fill in either the EIN or the name.",
+          "prefill": "26-3618722"
+        },
+        "name": {
+          "title": "Organization name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Fill in either the name or the EIN. A name that matches several organizations returns the candidates, free."
+        },
+        "state": {
+          "title": "State",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Two-letter state, to narrow a name search."
+        },
+        "mode": {
+          "title": "Depth",
+          "type": "string",
+          "editor": "select",
+          "enum": [
+            "snapshot",
+            "full"
+          ],
+          "enumTitles": [
+            "Snapshot",
+            "Full"
+          ],
+          "default": "snapshot",
+          "description": "Snapshot: status, latest headline figures, one verdict. Full: adds filings, ratios, people and grants where the returns carry them."
+        }
       },
       "events": [
-        { "name": "nonprofit-snapshot", "title": "Nonprofit snapshot", "description": "One organization found, snapshot depth.", "usd": 0.3, "credits": 200 },
-        { "name": "nonprofit-full", "title": "Nonprofit full record", "description": "One organization found, full depth.", "usd": 2.2, "credits": 1500 }
+        {
+          "name": "nonprofit-snapshot",
+          "title": "Nonprofit snapshot",
+          "description": "One organization found, snapshot depth.",
+          "usd": 0.3,
+          "credits": 200
+        },
+        {
+          "name": "nonprofit-full",
+          "title": "Nonprofit full record",
+          "description": "One organization found, full depth.",
+          "usd": 2.2,
+          "credits": 1500
+        }
       ],
-      "returns": ["Exemption status and whether the organization is on the revocation list", "Latest headline figures from its returns", "A plain verdict, and what the files do not cover"],
+      "returns": [
+        "Exemption status and whether the organization is on the revocation list",
+        "Latest headline figures from its returns",
+        "A plain verdict, and what the files do not cover"
+      ],
       "limits": "US organizations in the IRS files only. Returns are filed late by nature, so figures can be more than a year old."
     },
     {
@@ -74,16 +303,93 @@
       "title": "Company Due Diligence Report",
       "description": "A sourced due diligence report on one company, written for the decision you pick, such as buying from them, joining them or lending to them. Takes several minutes.",
       "sample": "get_company_report-selling_to",
-      "sampleKeys": ["status", "sections_json"],
-      "config": { "method": "POST", "path": "/v1/get_company_report", "fields": ["name", "domain", "angle", "country"], "oneOf": ["name", "domain"], "event": "company-report", "jobMinutes": 28, "notDelivered": { "status": "not_found" } },
-      "input": {
-        "name": { "title": "Company name", "type": "string", "editor": "textfield", "description": "Fill in the name, the domain or both.", "prefill": "Walmart" },
-        "domain": { "title": "Company website", "type": "string", "editor": "textfield", "description": "The company's domain." },
-        "angle": { "title": "Decision", "type": "string", "editor": "select", "enum": ["supplier_contract", "job_offer", "acquirer", "acquihire", "lender_landlord", "selling_to", "investor_partner", "reseller", "compete"], "enumTitles": ["Signing a supplier contract", "Weighing a job offer", "Buying the company", "Hiring the team by buying it", "Lending or renting to them", "Selling to them", "Investing or partnering", "Reselling for them", "Competing with them"], "default": "supplier_contract", "description": "The decision the report is written for." },
-        "country": { "title": "Country", "type": "string", "editor": "textfield", "description": "Where the company is, if the name is common." }
+      "sampleKeys": [
+        "status",
+        "sections_json"
+      ],
+      "config": {
+        "method": "POST",
+        "path": "/v1/get_company_report",
+        "fields": [
+          "name",
+          "domain",
+          "angle",
+          "country"
+        ],
+        "oneOf": [
+          "name",
+          "domain"
+        ],
+        "event": "company-report",
+        "jobMinutes": 28,
+        "notDelivered": {
+          "status": "not_found"
+        }
       },
-      "events": [{ "name": "company-report", "title": "Company report", "description": "One finished report. Set the run timeout to at least 30 minutes.", "usd": 7.4, "credits": 5000 }],
-      "returns": ["The report as a web page, as Markdown and as structured sections", "Links to the sources behind its statements", "No charge when the company cannot be found"],
+      "input": {
+        "name": {
+          "title": "Company name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Fill in the name, the domain or both.",
+          "prefill": "Walmart"
+        },
+        "domain": {
+          "title": "Company website",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The company's domain."
+        },
+        "angle": {
+          "title": "Decision",
+          "type": "string",
+          "editor": "select",
+          "enum": [
+            "supplier_contract",
+            "job_offer",
+            "acquirer",
+            "acquihire",
+            "lender_landlord",
+            "selling_to",
+            "investor_partner",
+            "reseller",
+            "compete"
+          ],
+          "enumTitles": [
+            "Signing a supplier contract",
+            "Weighing a job offer",
+            "Buying the company",
+            "Hiring the team by buying it",
+            "Lending or renting to them",
+            "Selling to them",
+            "Investing or partnering",
+            "Reselling for them",
+            "Competing with them"
+          ],
+          "default": "supplier_contract",
+          "description": "The decision the report is written for."
+        },
+        "country": {
+          "title": "Country",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Where the company is, if the name is common."
+        }
+      },
+      "events": [
+        {
+          "name": "company-report",
+          "title": "Company report",
+          "description": "One finished report. Set the run timeout to at least 30 minutes.",
+          "usd": 7.4,
+          "credits": 5000
+        }
+      ],
+      "returns": [
+        "The report as a web page, as Markdown and as structured sections",
+        "Links to the sources behind its statements",
+        "No charge when the company cannot be found"
+      ],
       "limits": "A research aid built from public information, which can be incomplete or out of date. It is not legal, credit or investment advice: open the sources before you decide."
     },
     {
@@ -91,13 +397,47 @@
       "title": "Show HN Best Time to Post",
       "description": "How often Show HN posts reached 50 and 100 points: overall, for the best hour and day, and for the slot you ask about. Counts, not a prediction.",
       "sample": "showhn-best_time",
-      "config": { "method": "GET", "path": "/v1/showhn/best_time", "fields": ["weekday", "hour"], "event": "slot-lookup" },
-      "input": {
-        "weekday": { "title": "Weekday", "type": "integer", "description": "0 is Sunday, 6 is Saturday.", "minimum": 0, "maximum": 6, "prefill": 2 },
-        "hour": { "title": "Hour (UTC)", "type": "integer", "description": "0 to 23, in UTC.", "minimum": 0, "maximum": 23, "prefill": 15 }
+      "config": {
+        "method": "GET",
+        "path": "/v1/showhn/best_time",
+        "fields": [
+          "weekday",
+          "hour"
+        ],
+        "event": "slot-lookup"
       },
-      "events": [{ "name": "slot-lookup", "title": "Lookup", "description": "One lookup that returns figures.", "usd": 0.01, "credits": 5 }],
-      "returns": ["The share of posts reaching 50 and 100 points, overall", "The best hour and day", "The same shares for your weekday and hour, with the number of posts behind them"],
+      "input": {
+        "weekday": {
+          "title": "Weekday",
+          "type": "integer",
+          "description": "0 is Sunday, 6 is Saturday.",
+          "minimum": 0,
+          "maximum": 6,
+          "prefill": 2
+        },
+        "hour": {
+          "title": "Hour (UTC)",
+          "type": "integer",
+          "description": "0 to 23, in UTC.",
+          "minimum": 0,
+          "maximum": 23,
+          "prefill": 15
+        }
+      },
+      "events": [
+        {
+          "name": "slot-lookup",
+          "title": "Lookup",
+          "description": "One lookup that returns figures.",
+          "usd": 0.01,
+          "credits": 5
+        }
+      ],
+      "returns": [
+        "The share of posts reaching 50 and 100 points, overall",
+        "The best hour and day",
+        "The same shares for your weekday and hour, with the number of posts behind them"
+      ],
       "limits": "Past shares are not a forecast for your post. Not affiliated with or endorsed by Hacker News."
     },
     {
@@ -105,14 +445,488 @@
       "title": "Product Changelog Lookup",
       "description": "The newest changelog entries held for a software product, each with date, title, a short summary and the vendor's own link.",
       "sample": "changelog-product",
-      "config": { "method": "POST", "path": "/v1/changelog/product", "fields": ["product", "limit"], "required": ["product"], "event": "changelog-lookup", "notDelivered": { "tracked": false } },
-      "input": {
-        "product": { "title": "Product", "type": "string", "editor": "textfield", "description": "The product's name.", "prefill": "Linear" },
-        "limit": { "title": "Entries", "type": "integer", "description": "How many of the newest entries.", "default": 20, "minimum": 1, "maximum": 50 }
+      "config": {
+        "method": "POST",
+        "path": "/v1/changelog/product",
+        "fields": [
+          "product",
+          "limit"
+        ],
+        "required": [
+          "product"
+        ],
+        "event": "changelog-lookup",
+        "notDelivered": {
+          "tracked": false
+        }
       },
-      "events": [{ "name": "changelog-lookup", "title": "Changelog lookup", "description": "One lookup of a tracked product that returns entries.", "usd": 0.005, "credits": 2 }],
-      "returns": ["Date and title of each entry", "A short summary of each", "The vendor's own link for each entry"],
+      "input": {
+        "product": {
+          "title": "Product",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The product's name.",
+          "prefill": "Linear"
+        },
+        "limit": {
+          "title": "Entries",
+          "type": "integer",
+          "description": "How many of the newest entries.",
+          "default": 20,
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "events": [
+        {
+          "name": "changelog-lookup",
+          "title": "Changelog lookup",
+          "description": "One lookup of a tracked product that returns entries.",
+          "usd": 0.005,
+          "credits": 2
+        }
+      ],
+      "returns": [
+        "Date and title of each entry",
+        "A short summary of each",
+        "The vendor's own link for each entry"
+      ],
       "limits": "Only tracked products have entries; an untracked product costs nothing. Entries can lag behind the vendor's page. Not affiliated with the vendors listed."
+    },
+    {
+      "name": "sec-form-d-lookup",
+      "title": "SEC Form D Raise Lookup",
+      "description": "Look up one US private funding notice (SEC Form D) by its accession number, or a company's Form D history by its SEC CIK number.",
+      "sample": "formd",
+      "config": {
+        "method": "POST",
+        "path": "/v1/brand/record",
+        "fields": [
+          "accession",
+          "cik"
+        ],
+        "exactlyOne": [
+          "accession",
+          "cik"
+        ],
+        "event": "form-d-found",
+        "notDelivered": {
+          "has_data": false
+        },
+        "deliveredIf": [
+          "record",
+          "form_d_raises.filings"
+        ],
+        "outputKeys": [
+          "as_of",
+          "record_type",
+          "record",
+          "identity",
+          "form_d_raises",
+          "source"
+        ],
+        "drop": [
+          "page_url"
+        ]
+      },
+      "input": {
+        "accession": {
+          "title": "Accession number",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The SEC accession number of one Form D filing. Use this or the CIK.",
+          "prefill": "0001692147-26-000001"
+        },
+        "cik": {
+          "title": "SEC CIK number",
+          "type": "integer",
+          "description": "The company's CIK, for its Form D history. Use this or the accession number."
+        }
+      },
+      "events": [
+        {
+          "name": "form-d-found",
+          "title": "Form D result",
+          "description": "One Form D filing, or one company's Form D history, that was found.",
+          "usd": 0.015,
+          "credits": 10
+        }
+      ],
+      "returns": [
+        "Issuer, address, industry and entity type as filed",
+        "Amount offered, amount sold, date of first sale, exemptions and amendment flag",
+        "People the filing names with their roles",
+        "A link to the filing on the SEC site"
+      ],
+      "limits": "Held filings are US Form D, nearly all filed from 2022 on. Form D states no valuation and does not name the investors in a round. Amounts are what the company reported. Many raises are never reported on this form."
+    },
+    {
+      "name": "us-layoff-notice-lookup",
+      "title": "US Layoff Notice (WARN) Lookup",
+      "description": "Find the US state layoff notices held for one company, by company name, website domain or SEC CIK number.",
+      "sample": "layoff",
+      "config": {
+        "method": "POST",
+        "path": "/v1/brand/record",
+        "fields": [
+          "name",
+          "domain",
+          "cik"
+        ],
+        "exactlyOne": [
+          "name",
+          "domain",
+          "cik"
+        ],
+        "event": "layoff-notices-found",
+        "notDelivered": {
+          "has_data": false
+        },
+        "deliveredIf": [
+          "layoff_notices.notices"
+        ],
+        "outputKeys": [
+          "as_of",
+          "identity",
+          "layoff_notices"
+        ],
+        "drop": [
+          "page_url"
+        ]
+      },
+      "input": {
+        "name": {
+          "title": "Company name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The company's legal or trading name. Give exactly one of name, domain or CIK.",
+          "prefill": "Microsoft"
+        },
+        "domain": {
+          "title": "Website domain",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The company's domain, for example example.com."
+        },
+        "cik": {
+          "title": "SEC CIK number",
+          "type": "integer",
+          "description": "The company's CIK, for companies that file with the SEC."
+        }
+      },
+      "events": [
+        {
+          "name": "layoff-notices-found",
+          "title": "Company with layoff notices",
+          "description": "One company lookup that returns at least one layoff notice.",
+          "usd": 0.015,
+          "credits": 10
+        }
+      ],
+      "returns": [
+        "Each notice held: state, city, employees, notice and effective dates, type",
+        "The company name as filed, how it was matched and a source link",
+        "How the company you asked for was identified"
+      ],
+      "limits": "State layoff notices only, as published by the states we read; coverage and history differ by state and small layoffs may need no notice. A name can belong to more than one company: check the match details. No notice found does not prove there were no layoffs. No employee is named."
+    },
+    {
+      "name": "sec-8k-executive-changes",
+      "title": "SEC 8-K Executive Changes",
+      "description": "Appointments and departures that US public companies report on Form 8-K, Item 5.02, one record per filing.",
+      "sample": "exec",
+      "config": {
+        "method": "POST",
+        "path": "/v1/executive_changes",
+        "fields": [
+          "accession",
+          "cik",
+          "company",
+          "person",
+          "filed_from",
+          "filed_to",
+          "page",
+          "page_size"
+        ],
+        "oneOf": [
+          "accession",
+          "cik",
+          "company",
+          "person",
+          "filed_from"
+        ],
+        "event": "filing-returned",
+        "notDelivered": {
+          "has_data": false
+        },
+        "perRecord": {
+          "listKey": "records",
+          "sizeField": "page_size",
+          "default": 5,
+          "max": 25,
+          "exact": "accession",
+          "shared": [
+            "source",
+            "coverage_from",
+            "as_of"
+          ]
+        }
+      },
+      "input": {
+        "company": {
+          "title": "Company name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Words from the company name; every word must appear as a whole word.",
+          "prefill": "LKQ"
+        },
+        "cik": {
+          "title": "SEC CIK number",
+          "type": "integer",
+          "description": "That company only."
+        },
+        "person": {
+          "title": "Person",
+          "type": "string",
+          "editor": "textfield",
+          "description": "First and last name."
+        },
+        "accession": {
+          "title": "Accession number",
+          "type": "string",
+          "editor": "textfield",
+          "description": "One exact filing. Send it on its own."
+        },
+        "filed_from": {
+          "title": "Filed from",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Filings filed on or after this date, YYYY-MM-DD."
+        },
+        "filed_to": {
+          "title": "Filed to",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Filings filed on or before this date, YYYY-MM-DD."
+        },
+        "page": {
+          "title": "Page",
+          "type": "integer",
+          "description": "Page of results, from 1.",
+          "default": 1,
+          "minimum": 1
+        },
+        "page_size": {
+          "title": "Most filings to return",
+          "type": "integer",
+          "description": "From 1 to 25. You pay for each filing returned.",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 25
+        }
+      },
+      "events": [
+        {
+          "name": "filing-returned",
+          "title": "Filing returned",
+          "description": "Charged once for each filing returned.",
+          "usd": 0.015,
+          "credits": 10
+        }
+      ],
+      "returns": [
+        "Company, CIK and tickers",
+        "Each named change: person, role, appointed or departed, effective date and the filing's own sentence",
+        "Links to the filing and the document, and the filing date"
+      ],
+      "limits": "Coverage starts on 2 January 2026. Role and effective date are read from the filing's sentence and are empty when it does not state them; some filings name nobody in a readable sentence. Private companies do not file Form 8-K. Check the linked filing before acting."
+    },
+    {
+      "name": "us-company-ownership",
+      "title": "US Public Company Ownership",
+      "description": "Who holds a US public company according to its SEC filings: large holder reports, insider holdings and acquisition reports.",
+      "sample": "ownership",
+      "config": {
+        "method": "POST",
+        "path": "/v1/ownership",
+        "fields": [
+          "ticker",
+          "sec_cik",
+          "company"
+        ],
+        "exactlyOne": [
+          "ticker",
+          "sec_cik",
+          "company"
+        ],
+        "event": "ownership-record",
+        "notDelivered": {
+          "has_data": false
+        }
+      },
+      "input": {
+        "ticker": {
+          "title": "Ticker",
+          "type": "string",
+          "editor": "textfield",
+          "description": "The ticker the SEC's list gives the company today. Give exactly one of ticker, CIK or company.",
+          "prefill": "ECHO"
+        },
+        "sec_cik": {
+          "title": "SEC CIK number",
+          "type": "integer",
+          "description": "Exact company."
+        },
+        "company": {
+          "title": "Company name",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Words from the name. If several companies match, you get the list and no charge."
+        }
+      },
+      "events": [
+        {
+          "name": "ownership-record",
+          "title": "Ownership record",
+          "description": "One company's ownership record that was found.",
+          "usd": 0.015,
+          "credits": 10
+        }
+      ],
+      "returns": [
+        "Reports of large holdings (Schedules 13D and 13G)",
+        "Insider holdings from Forms 3, 4 and 5",
+        "Acquisition reports the company filed, each with its date and filing link"
+      ],
+      "limits": "Quarterly institutional holdings (Form 13F) are not included. No parent company is worked out. Share figures are as filed on their dates, not today's positions. US SEC filers only."
+    },
+    {
+      "name": "startup-investor-directory",
+      "title": "Startup Investor Directory Search",
+      "description": "Search a directory of startup investors by sector, stage, region and cheque size, or fetch one record by its slug.",
+      "sample": "investors",
+      "config": {
+        "method": "GET",
+        "path": "/v1/investors/search",
+        "fields": [
+          "slug",
+          "q",
+          "thesis",
+          "sector",
+          "stage",
+          "region",
+          "country_code",
+          "check_size_min",
+          "check_size_max",
+          "page",
+          "page_size"
+        ],
+        "event": "investor-search-with-results",
+        "oneOf": [
+          "slug",
+          "q",
+          "thesis",
+          "sector",
+          "stage",
+          "region",
+          "country_code",
+          "check_size_min",
+          "check_size_max"
+        ],
+        "drop": [
+          "has_email",
+          "enrich_cost_credits",
+          "photo_url",
+          "page_url"
+        ]
+      },
+      "input": {
+        "sector": {
+          "title": "Sector",
+          "type": "string",
+          "editor": "textfield",
+          "description": "For example fintech or healthtech.",
+          "prefill": "fintech"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string",
+          "editor": "textfield",
+          "description": "For example pre seed, seed or series a."
+        },
+        "region": {
+          "title": "Region",
+          "type": "string",
+          "editor": "textfield",
+          "description": "NA, EU, APAC, ME or OFFSHORE."
+        },
+        "country_code": {
+          "title": "Country code",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Two letter country code."
+        },
+        "q": {
+          "title": "Free text",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Searches name, thesis and firm description."
+        },
+        "thesis": {
+          "title": "Thesis words",
+          "type": "string",
+          "editor": "textfield",
+          "description": "Words that must appear in the stated thesis."
+        },
+        "check_size_min": {
+          "title": "Cheque reaches at least (USD)",
+          "type": "integer",
+          "description": "Only investors whose stated range reaches this amount.",
+          "minimum": 0
+        },
+        "check_size_max": {
+          "title": "Cheque starts at or below (USD)",
+          "type": "integer",
+          "description": "Only investors whose stated range starts at or below this amount.",
+          "minimum": 0
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "editor": "textfield",
+          "description": "One exact record. Use it on its own."
+        },
+        "page": {
+          "title": "Page",
+          "type": "integer",
+          "description": "Page of results, from 1.",
+          "default": 1,
+          "minimum": 1
+        },
+        "page_size": {
+          "title": "Results per page",
+          "type": "integer",
+          "description": "From 1 to 100.",
+          "default": 25,
+          "minimum": 1,
+          "maximum": 100
+        }
+      },
+      "events": [
+        {
+          "name": "investor-search-with-results",
+          "title": "Search with results",
+          "description": "One search that returns at least one investor, up to 100 rows.",
+          "usd": 0.01,
+          "credits": 5
+        }
+      ],
+      "returns": [
+        "Name, location, stated thesis and thesis summary",
+        "Recent sectors and stages, stated cheque range",
+        "Public profile and website links where held"
+      ],
+      "limits": "No email addresses or private contact details are returned. Records can lag behind what an investor is doing now, and some cheque ranges are unstated (shown as 0). Some records are people: use them only where the law allows and honour opt-outs. A search that returns nothing is not charged."
     }
   ]
 }

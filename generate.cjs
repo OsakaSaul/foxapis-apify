@@ -11,8 +11,11 @@ const samplesDir = process.argv.includes("--samples") ? process.argv[process.arg
 // keep the shape of a real answer, shorten long lists and texts, and drop rendered page copies
 // no private individual is named beside their pay in a store listing, and no vendor of AI models is named in a sample
 function redact(v, key = "") {
+  if (/people_on_record$/.test(key) && Array.isArray(v) && v.length) return ["[people removed from this sample]"];
   if (Array.isArray(v)) return v.filter((x) => !/(openai|anthropic|claude|gemini|chatgpt|gpt-\d)/i.test(JSON.stringify(x))).map((x) => redact(x, key));
-  if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, k === "name" && /top_pay|listed|highest_paid/.test(key) ? "[name removed from this sample]" : redact(x, key + "." + k)]));
+  const MASK = "[name removed from this sample]";
+  const hide = (k) => (k === "name" && /top_pay|listed|highest_paid|people_named|insider_holdings/.test(key)) || k === "person" || (k === "sentence" && /changes/.test(key));
+  if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, hide(k) ? MASK : k === "holders" && Array.isArray(x) ? x.map(() => MASK) : redact(x, key + "." + k)]));
   return v;
 }
 
@@ -30,10 +33,12 @@ const json = (o) => JSON.stringify(o, null, 2) + "\n";
   const { clean } = await import("./_shared/core.js");
   for (const a of actors) {
     const dir = path.join(ROOT, a.name);
-    if (samplesDir) {
+    if (samplesDir && fs.existsSync(path.join(samplesDir, a.sample + ".json"))) {   // only the samples that are in the folder are refreshed
       const raw = JSON.parse(fs.readFileSync(path.join(samplesDir, a.sample + ".json"), "utf8"));
       let response = raw.response;
       if (response && response.status === "done" && response.result) response = response.result;
+      const { strip, narrow } = await import("./_shared/core.js");
+      response = strip(narrow(a.config, response), a.config.drop);
       if (a.sampleKeys) response = Object.fromEntries(a.sampleKeys.filter((k) => k in response).map((k) => [k, response[k]]));
       write(path.join(dir, "sample.json"), json({ captured: raw.captured, input: raw.request.body && Object.keys(raw.request.body).length ? raw.request.body : Object.fromEntries(new URLSearchParams(raw.request.query || "")), output: clean(trim(redact(response))) }));
     }

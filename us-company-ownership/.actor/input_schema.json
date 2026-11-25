@@ -1,0 +1,26 @@
+{
+  "title": "US Public Company Ownership",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "ticker": {
+      "title": "Ticker",
+      "type": "string",
+      "editor": "textfield",
+      "description": "The ticker the SEC's list gives the company today. Give exactly one of ticker, CIK or company.",
+      "prefill": "ECHO"
+    },
+    "sec_cik": {
+      "title": "SEC CIK number",
+      "type": "integer",
+      "description": "Exact company."
+    },
+    "company": {
+      "title": "Company name",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Words from the name. If several companies match, you get the list and no charge."
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,7 @@
+{
+  "investor-search-with-results": {
+    "eventTitle": "Search with results",
+    "eventDescription": "One search that returns at least one investor, up to 100 rows.",
+    "eventPriceUsd": 0.01
+  }
+}

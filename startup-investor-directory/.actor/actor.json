@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "startup-investor-directory",
+  "title": "Startup Investor Directory Search",
+  "description": "Search a directory of startup investors by sector, stage, region and cheque size, or fetch one record by its slug.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}

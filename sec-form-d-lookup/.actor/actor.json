@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "sec-form-d-lookup",
+  "title": "SEC Form D Raise Lookup",
+  "description": "Look up one US private funding notice (SEC Form D) by its accession number, or a company's Form D history by its SEC CIK number.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "defaultMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md"
+}
